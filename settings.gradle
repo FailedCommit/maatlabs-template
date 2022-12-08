@@ -1,4 +1,4 @@
 rootProject.name = 'maatlabs-multimodule-gradle-boot-template'
 
-include 'library'
-include 'application'
+include 'services'
+include 'api'
