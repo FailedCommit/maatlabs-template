@@ -13,9 +13,18 @@ repositories {
 	mavenCentral()
 }
 
+openApiGenerate {
+	generatorName = "spring"
+	inputSpec = "$rootDir/api/src/main/resources/specs/artists.yml".toString()
+	outputDir = "${project.buildDir}/generated-sources".toString()
+	apiPackage = "com.maatlabs.application.api"
+	modelPackage = "com.maatlabs.application.beans"
+}
+
+compileJava.dependsOn tasks.openApiGenerate
+
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-actuator'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	implementation project(':services')
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
