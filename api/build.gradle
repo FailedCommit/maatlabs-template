@@ -14,11 +14,16 @@ repositories {
 }
 
 openApiGenerate {
+	print "root dir is: $rootDir"
 	generatorName = "spring"
-	inputSpec = "$rootDir/api/src/main/resources/specs/artists.yml".toString()
-	outputDir = "${project.buildDir}/generated-sources".toString()
-	apiPackage = "com.maatlabs.application.api"
-	modelPackage = "com.maatlabs.application.beans"
+	inputSpec = "$rootDir/api/src/main/resources/specs/petstore.yml".toString()
+	outputDir = "$rootDir/services/".toString()
+	apiPackage = "com.maatlabs.services.controllers"
+	modelPackage = "com.maatlabs.services.beans"
+	configOptions = [
+			dateLibrary: "java8",
+			delegatePattern: "true"
+	]
 }
 
 compileJava.dependsOn tasks.openApiGenerate
