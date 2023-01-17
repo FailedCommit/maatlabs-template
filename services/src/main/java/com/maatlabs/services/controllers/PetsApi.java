@@ -24,7 +24,7 @@ import javax.annotation.Generated;
 import javax.validation.Valid;
 import java.util.List;
 
-@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-01-16T19:27:12.082+05:30[Asia/Kolkata]")
+@Generated(value = "org.openapitools.codegen.languages.SpringCodegen", date = "2023-01-17T09:06:32.315+05:30[Asia/Kolkata]")
 @Validated
 @Tag(name = "pets", description = "the pets API")
 public interface PetsApi {
